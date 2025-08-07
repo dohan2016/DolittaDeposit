@@ -2,6 +2,8 @@ from PyQt5 import QtWidgets
 from interface import Ui_MainWindow
 from hashage_dialog import Ui_Dialog as Ui_Hashage
 from mdp_dialog import Ui_Dialog as Ui_MDP
+from PyQt5 import QtWidgets, QtGui
+
 
 from modules.Utilisateur import Utilisateur
 from modules.GestionnaireAcces import GestionnaireAcces
@@ -13,6 +15,11 @@ class FenetrePrincipale(QtWidgets.QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.setWindowIcon(QtGui.QIcon("icone.png"))
+        # Fixer la taille de la fenêtre principale
+        self.setFixedSize(840,800)
+        #self.ui.centralwidget.setStyleSheet(
+           # "background-image: url(fond.jpg);")
 
         self.gestionnaire = GestionnaireAcces()
         self.fichier_json = "sauvegarde.json"
