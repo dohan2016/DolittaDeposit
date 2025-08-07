@@ -6,9 +6,9 @@
    <string>Gestionnaire d'accès réseau local</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout_main">
+   <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="layout_form">
+     <layout class="QHBoxLayout">
       <item>
        <widget class="QLineEdit" name="lineEdit_nom">
         <property name="placeholderText">
@@ -36,69 +36,46 @@
      <widget class="QTableWidget" name="tableWidget_utilisateurs"/>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="layout_actions">
-      <item>
-       <widget class="QPushButton" name="pushButton_activer">
-        <property name="text">
-         <string>Activer</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_desactiver">
-        <property name="text">
-         <string>Désactiver</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_supprimer">
-        <property name="text">
-         <string>Supprimer</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="layout_fichier">
-      <item>
-       <widget class="QPushButton" name="pushButton_sauvegarder">
-        <property name="text">
-         <string>Sauvegarder</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushButton_charger">
-        <property name="text">
-         <string>Charger</string>
-        </property>
-       </widget>
-      </item>
+     <layout class="QHBoxLayout">
+      <item><widget class="QPushButton" name="pushButton_activer"><property name="text"><string>Activer</string></property></widget></item>
+      <item><widget class="QPushButton" name="pushButton_desactiver"><property name="text"><string>Désactiver</string></property></widget></item>
+      <item><widget class="QPushButton" name="pushButton_supprimer"><property name="text"><string>Supprimer</string></property></widget></item>
+      <item><widget class="QPushButton" name="pushButton_sauvegarder"><property name="text"><string>Sauvegarder</string></property></widget></item>
+      <item><widget class="QPushButton" name="pushButton_charger"><property name="text"><string>Charger</string></property></widget></item>
      </layout>
     </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x><y>0</y><width>800</width><height>21</height>
+    </rect>
+   </property>
    <widget class="QMenu" name="menuOutils">
     <property name="title">
      <string>Outils</string>
     </property>
     <addaction name="actionHashage"/>
     <addaction name="actionMotDePasse"/>
+    <addaction name="actionChiffrement"/>
    </widget>
    <addaction name="menuOutils"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionHashage">
    <property name="text">
-    <string>Hashage de texte</string>
+    <string>Hashage</string>
    </property>
   </action>
   <action name="actionMotDePasse">
    <property name="text">
     <string>Générateur de mot de passe</string>
+   </property>
+  </action>
+  <action name="actionChiffrement">
+   <property name="text">
+    <string>Chiffrement / Déchiffrement</string>
    </property>
   </action>
  </widget>

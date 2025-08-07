@@ -2,7 +2,10 @@ from PyQt5 import QtWidgets
 from interface import Ui_MainWindow
 from hashage_dialog import Ui_Dialog as Ui_Hashage
 from mdp_dialog import Ui_Dialog as Ui_MDP
+from chiffrement_dialog import Ui_Dialog as Ui_Chiffrement
+from outils.chiffrement import chiffrer_cesar, dechiffrer_cesar, chiffrer_aes, dechiffrer_aes
 from PyQt5 import QtWidgets, QtGui
+from PyQt5.QtWidgets import QComboBox, QTableWidgetItem
 
 
 from modules.Utilisateur import Utilisateur
@@ -16,10 +19,9 @@ class FenetrePrincipale(QtWidgets.QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         self.setWindowIcon(QtGui.QIcon("icone.png"))
+        self.ajouter_filtre_statut()
         # Fixer la taille de la fenêtre principale
         self.setFixedSize(840,800)
-        #self.ui.centralwidget.setStyleSheet(
-           # "background-image: url(fond.jpg);")
 
         self.gestionnaire = GestionnaireAcces()
         self.fichier_json = "sauvegarde.json"
@@ -39,6 +41,61 @@ class FenetrePrincipale(QtWidgets.QMainWindow):
         # Menu Outils
         self.ui.actionHashage.triggered.connect(self.ouvrir_hashage)
         self.ui.actionMotDePasse.triggered.connect(self.ouvrir_mdp)
+        self.ui.actionChiffrement.triggered.connect(self.ouvrir_chiffrement)
+
+    def ouvrir_chiffrement(self):
+        dialog = QtWidgets.QDialog(self)
+        ui = Ui_Chiffrement()
+        ui.setupUi(dialog)
+
+        def executer():
+            texte = ui.lineEdit_texte.text()
+            cle = ui.lineEdit_cle.text()
+            algo = ui.comboBox_algo.currentText()
+            mode = "chiffrer" if ui.radioButton_chiffrer.isChecked() else "dechiffrer"
+
+            if algo == "César":
+                resultat = chiffrer_cesar(texte, cle) if mode == "chiffrer" else dechiffrer_cesar(texte, cle)
+            elif algo == "AES":
+                resultat = chiffrer_aes(texte, cle) if mode == "chiffrer" else dechiffrer_aes(texte, cle)
+            else:
+                resultat = "Algorithme inconnu"
+
+            ui.textEdit_resultat.setPlainText(resultat)
+
+        ui.pushButton_exec.clicked.connect(executer)
+        dialog.exec_()
+
+    def ajouter_filtre_statut(self):
+        """Ajoute un menu déroulant (comboBox) pour filtrer les utilisateurs."""
+        self.comboBox_filtre = QComboBox()
+        self.comboBox_filtre.addItems(["Tous", "Actifs", "Inactifs"])
+        self.comboBox_filtre.currentIndexChanged.connect(self.filtrer_utilisateurs)
+
+        # Ajoute le comboBox en haut de la fenêtre (si layout vertical)
+        self.ui.verticalLayout.insertWidget(0, self.comboBox_filtre)
+
+    def ajouter_utilisateur_dans_table(self, utilisateur):
+        row = self.ui.tableWidget_utilisateurs.rowCount()
+        self.ui.tableWidget_utilisateurs.insertRow(row)
+        self.ui.tableWidget_utilisateurs.setItem(row, 0, QTableWidgetItem(utilisateur.nom))
+        self.ui.tableWidget_utilisateurs.setItem(row, 1, QTableWidgetItem(utilisateur.email))
+        self.ui.tableWidget_utilisateurs.setItem(row, 2, QTableWidgetItem(utilisateur.mot_de_passe))
+        self.ui.tableWidget_utilisateurs.setItem(row, 3, QTableWidgetItem("Oui" if utilisateur.actif else "Non"))
+
+    def filtrer_utilisateurs(self):
+        """Filtre les lignes du tableau en fonction du statut sélectionné."""
+        filtre = self.comboBox_filtre.currentText()
+        self.ui.tableWidget_utilisateurs.setRowCount(0)  # Vide le tableau
+
+        for utilisateur in self.gestionnaire.utilisateurs:
+            afficher = (
+                    filtre == "Tous" or
+                    (filtre == "Actifs" and utilisateur.actif) or
+                    (filtre == "Inactifs" and not utilisateur.actif)
+            )
+            if afficher:
+                self.ajouter_utilisateur_dans_table(utilisateur)
 
     def ajouter_utilisateur(self):
         nom = self.ui.lineEdit_nom.text().strip()
@@ -116,6 +173,8 @@ class FenetrePrincipale(QtWidgets.QMainWindow):
 
         ui.pushButton_generer.clicked.connect(generer)
         dialog.exec_()
+
+
 
 if __name__ == "__main__":
     import sys
