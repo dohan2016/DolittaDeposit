@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowTitle">
+   <string>Gestionnaire d'accès</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_main">
+    <item>
+     <layout class="QHBoxLayout" name="layout_form">
+      <item>
+       <widget class="QLineEdit" name="lineEdit_nom">
+        <property name="placeholderText">
+         <string>Nom</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_email">
+        <property name="placeholderText">
+         <string>Email</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_ajouter">
+        <property name="text">
+         <string>Ajouter</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget_utilisateurs"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="layout_actions">
+      <item>
+       <widget class="QPushButton" name="pushButton_activer">
+        <property name="text">
+         <string>Activer</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_desactiver">
+        <property name="text">
+         <string>Désactiver</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_supprimer">
+        <property name="text">
+         <string>Supprimer</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="layout_fichier">
+      <item>
+       <widget class="QPushButton" name="pushButton_sauvegarder">
+        <property name="text">
+         <string>Sauvegarder</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_charger">
+        <property name="text">
+         <string>Charger</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <widget class="QMenu" name="menuOutils">
+    <property name="title">
+     <string>Outils</string>
+    </property>
+    <addaction name="actionHashage"/>
+    <addaction name="actionMotDePasse"/>
+   </widget>
+   <addaction name="menuOutils"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionHashage">
+   <property name="text">
+    <string>Hashage de texte</string>
+   </property>
+  </action>
+  <action name="actionMotDePasse">
+   <property name="text">
+    <string>Générateur de mot de passe</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
