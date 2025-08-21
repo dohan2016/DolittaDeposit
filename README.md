@@ -5,15 +5,8 @@
 - Gestion des utilisateurs (ajout, suppression, activation, etc.)
 - Génération de mot de passe sécurisé
 - Hashage de texte (SHA256, MD5…)
-- Chiffrement / Déchiffrement (César, AES)
+- Chiffrement / Déchiffrement (César)
 
----
-
-## 📸 Aperçu
-
-![interface](assets/screenshot_main.png)
-
----
 
 ## 🧰 Fonctionnalités principales
 
@@ -29,10 +22,7 @@
 - **Générateur de mot de passe** (longueur personnalisable)
 - **Chiffrement / Déchiffrement** :
   - César
-  - AES (mode ECB, avec clé)
 
----
 
-## 🏗️ Structure du projet
 
 
