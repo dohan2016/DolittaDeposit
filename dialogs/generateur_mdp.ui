@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DlgGenerateurMDP</class>
+ <widget class="QDialog" name="DlgGenerateurMDP">
+  <property name="windowTitle"><string>Générateur de mot de passe</string></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <!-- Options (14 pt) -->
+   <item>
+    <layout class="QHBoxLayout" name="optionsLayout">
+     <item><widget class="QCheckBox" name="chkMaj">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Majuscules</string></property></widget></item>
+     <item><widget class="QCheckBox" name="chkMin">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Minuscules</string></property></widget></item>
+     <item><widget class="QCheckBox" name="chkChiffres">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Chiffres</string></property></widget></item>
+     <item><widget class="QCheckBox" name="chkSymboles">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Symboles</string></property></widget></item>
+    </layout>
+   </item>
+
+   <!-- Longueur + bouton générer -->
+   <item>
+    <layout class="QHBoxLayout" name="lengthLayout">
+     <item><widget class="QLabel" name="lblLongueur">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Longueur :</string></property></widget></item>
+     <item><widget class="QSpinBox" name="spinLongueur">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="minimum"><number>6</number></property>
+       <property name="maximum"><number>64</number></property>
+       <property name="value"><number>12</number></property></widget></item>
+     <item><widget class="QPushButton" name="btnGenerer">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Générer</string></property></widget></item>
+    </layout>
+   </item>
+
+   <!-- Résultat (18 pt, large) -->
+   <item>
+    <widget class="QLineEdit" name="outputMDP">
+     <property name="font"><font><pointsize>18</pointsize></font></property>
+     <property name="placeholderText"><string>Mot de passe généré…</string></property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+       <horstretch>0</horstretch><verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+
+   <!-- Fermer -->
+   <item>
+    <widget class="QPushButton" name="btnFermer">
+     <property name="font"><font><pointsize>14</pointsize></font></property>
+     <property name="text"><string>Fermer</string></property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

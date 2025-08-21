@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DlgHash</class>
+ <widget class="QDialog" name="DlgHash">
+  <property name="windowTitle"><string>Hashage de texte</string></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <!-- Zone de texte à hacher (18 pt) -->
+   <item>
+    <widget class="QPlainTextEdit" name="inputTexte">
+     <property name="placeholderText">
+      <string>Saisir du texte à hacher…</string>
+     </property>
+     <property name="font">
+      <font><pointsize>18</pointsize></font>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch><verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+
+   <!-- Ligne de commandes -->
+   <item>
+    <layout class="QHBoxLayout" name="cmdLayout">
+     <item>
+      <widget class="QComboBox" name="comboAlgo">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <item><property name="text"><string>SHA256</string></property></item>
+       <item><property name="text"><string>SHA1</string></property></item>
+       <item><property name="text"><string>MD5</string></property></item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnHasher">
+       <property name="font"><font><pointsize>14</pointsize></font></property>
+       <property name="text"><string>Hacher</string></property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+
+   <!-- Sortie du hash (14 pt) -->
+   <item>
+    <widget class="QLineEdit" name="outputHash">
+     <property name="readOnly"><bool>true</bool></property>
+     <property name="font"><font><pointsize>14</pointsize></font></property>
+     <property name="placeholderText"><string>Hash ici…</string></property>
+    </widget>
+   </item>
+
+   <!-- Fermer -->
+   <item>
+    <widget class="QPushButton" name="btnFermer">
+     <property name="font"><font><pointsize>14</pointsize></font></property>
+     <property name="text"><string>Fermer</string></property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

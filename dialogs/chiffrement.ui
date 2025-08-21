@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DlgChiffrement</class>
+ <widget class="QDialog" name="DlgChiffrement">
+  <property name="windowTitle">
+   <string>Chiffrement / Déchiffrement</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+
+   <!-- Zone d'entrée (18 pt) -->
+   <item>
+    <widget class="QPlainTextEdit" name="inputTexte">
+     <property name="placeholderText">
+      <string>Saisir le texte ici…</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+
+   <!-- Ligne de contrôles -->
+   <item>
+    <layout class="QHBoxLayout" name="controlsLayout">
+
+     <item>
+      <widget class="QComboBox" name="comboMode">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <item><property name="text"><string>Chiffrer</string></property></item>
+       <item><property name="text"><string>Déchiffrer</string></property></item>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QSpinBox" name="spinDecalage">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="minimum"><number>0</number></property>
+       <property name="maximum"><number>25</number></property>
+       <property name="value"><number>3</number></property>
+       <property name="toolTip">
+        <string>Décalage (0–25)</string>
+       </property>
+      </widget>
+     </item>
+
+     <item>
+      <widget class="QPushButton" name="btnExecuter">
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text"><string>Exécuter</string></property>
+      </widget>
+     </item>
+
+    </layout>
+   </item>
+
+   <!-- Zone de sortie (18 pt) -->
+   <item>
+    <widget class="QPlainTextEdit" name="outputTexte">
+     <property name="placeholderText">
+      <string>Résultat…</string>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>18</pointsize>
+      </font>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>1</verstretch>
+      </sizepolicy>
+     </property>
+    </widget>
+   </item>
+
+   <!-- Bouton fermer -->
+   <item>
+    <widget class="QPushButton" name="btnFermer">
+     <property name="font">
+      <font>
+       <pointsize>14</pointsize>
+      </font>
+     </property>
+     <property name="text"><string>Fermer</string></property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

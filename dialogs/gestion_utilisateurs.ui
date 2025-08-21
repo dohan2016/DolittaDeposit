@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DlgGestionUtilisateurs</class>
+ <widget class="QDialog" name="DlgGestionUtilisateurs">
+  <property name="windowTitle"><string>Gestion des utilisateurs</string></property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="topLayout">
+     <item><widget class="QLineEdit" name="inputNom"><property name="placeholderText"><string>Nom complet</string></property></widget></item>
+     <item><widget class="QLineEdit" name="inputEmail"><property name="placeholderText"><string>Adresse courriel</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnAjouter"><property name="text"><string>Ajouter</string></property></widget></item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="filterLayout">
+     <item><widget class="QComboBox" name="comboFiltre">
+       <item><property name="text"><string>Tous</string></property></item>
+       <item><property name="text"><string>Actifs</string></property></item>
+       <item><property name="text"><string>Inactifs</string></property></item>
+     </widget></item>
+     <item><widget class="QPushButton" name="btnSauvegarder"><property name="text"><string>Sauvegarder JSON</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnCharger"><property name="text"><string>Charger JSON</string></property></widget></item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="table">
+     <property name="columnCount"><number>4</number></property>
+     <column><property name="text"><string>Nom</string></property></column>
+     <column><property name="text"><string>Email</string></property></column>
+     <column><property name="text"><string>Mot de passe</string></property></column>
+     <column><property name="text"><string>Actif</string></property></column>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout">
+     <item><widget class="QPushButton" name="btnActiver"><property name="text"><string>Activer</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnDesactiver"><property name="text"><string>Désactiver</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnSupprimer"><property name="text"><string>Supprimer</string></property></widget></item>
+     <item><widget class="QPushButton" name="btnFermer"><property name="text"><string>Fermer</string></property></widget></item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
