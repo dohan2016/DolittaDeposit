@@ -126,6 +126,7 @@ class FenetrePrincipale(QtWidgets.QMainWindow):
 
     def __init__(self):
         super().__init__()
+        #cc
 
         # 1) Charger l'UI construite dans Qt Designer
         uic.loadUi(os.path.join(BASE_DIR, 'interface.ui'), self)
