@@ -623,7 +623,7 @@ def ouvrir_dialogue_affichage(parent, gestionnaire):
 
     # Aide dédiée
     _attach_help(dlg, """
-    <h3 style='font-size:22px;margin:0 0 6px 0;'>Affichage des utilisateurs (lecture seule)</h3>
+    <h3 style='font-size:22px;margin:0 0 6px 0;'>Affichage des utilisateurs (Lecture seule)</h3>
     <ul style='margin:0 0 0 18px;'>
       <li>Utilisez le filtre : Tous / Actifs / Inactifs</li>
       <li>Cliquez sur <em>Actualiser</em> pour mettre à jour la liste</li>

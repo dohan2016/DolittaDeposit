@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="62598adc-6669-4e21-8178-2c641e20ff3b" name="Changes" comment="new version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NewUsers.json" beforeDir="false" afterPath="$PROJECT_DIR$/NewUsers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dialogs/generateur_mdp.ui" beforeDir="false" afterPath="$PROJECT_DIR$/dialogs/generateur_mdp.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dialogs_logic.py" beforeDir="false" afterPath="$PROJECT_DIR$/dialogs_logic.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utilisateurs.json" beforeDir="false" afterPath="$PROJECT_DIR$/utilisateurs.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +140,15 @@
       <option name="project" value="LOCAL" />
       <updated>1755787456100</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="new version">
+      <option name="closed" value="true" />
+      <created>1755790499357</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1755790499357</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
